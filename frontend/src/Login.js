@@ -14,10 +14,10 @@ function Login() {
 
         try {
 
-            // await axios.post("http://localhost:5000/login",{
-            // email,
-            // password
-            // })
+            await axios.post(`${process.env.REACT_APP_BACKEND}/login`, {
+                email,
+                password
+            })
 
             alert("Login Successful")
 

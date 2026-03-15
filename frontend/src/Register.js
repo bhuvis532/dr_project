@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import "./style.css";
-
 function Register() {
 
     const navigate = useNavigate();
@@ -10,12 +9,11 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [number, setNumber] = useState("");
-
     const handleRegister = async () => {
 
         try {
 
-            await axios.post("http://localhost:5000/register", {
+            await axios.post(`${process.env.REACT_APP_BACKEND}/register`, {
                 email,
                 password,
                 number
